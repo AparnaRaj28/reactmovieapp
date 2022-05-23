@@ -8,7 +8,7 @@ const [movies, setmovie] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
-          const result = await fetch('http://localhost:8080/viewmovie')
+          const result = await fetch('http://localhost:3333/movies')
           const jsonResult = await result.json()
     
           setmovie(jsonResult)

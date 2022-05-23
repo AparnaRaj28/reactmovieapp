@@ -2,12 +2,12 @@
     box-sizing: border-box;
   }
   
-  body {
+ body {
     min-height: 100vh;
     display: flex;
     font-weight: 400;
     font-family: sans-serif;
-    background: url('https://images.squarespace-cdn.com/content/v1/57b469f26a496332a1950719/1556306222188-HOUAOOJY3V8PWBOPB962/felix-mooneeram-222805-unsplash.jpg?format=2500w') /* fallback for old browsers */
+    background:rgb(17, 17, 17);
    
   }
   

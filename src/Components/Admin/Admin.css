@@ -1,0 +1,133 @@
+.topbar {
+    width: 100%;
+    height: 60px;
+    background-color: rgb(19, 15, 15);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+  }
+  
+  .topbarWrapper {
+    height: 100%;
+    padding: 0px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  .logo {
+    font-weight: bold;
+    font-size: 30px;
+    color: rgb(246, 246, 253);
+    cursor: pointer;
+  }
+  
+  .topRight{
+      display: flex;
+      align-items: center;
+  }
+  
+  .topbarIconContainer {
+    position: relative;
+    cursor: pointer;
+    margin-right: 10px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .topIconBadge{
+      width: 15px;
+      height: 15px;
+      position: absolute;
+      top: -5px;
+      right: 0px;
+      background-color: red;
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+  }
+  
+  .topAvatar{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+  }
+
+  /* -----------sidebar------------- */
+  .sidebar {
+    flex: 1;
+    height: calc(100vh - 50px);
+    background-color: rgb(32, 32, 32);
+    position: sticky;
+    top: 50px;
+  }
+  
+  .sidebarWrapper {
+    padding: 20px;
+    color: rgb(255, 255, 255);
+  }
+  
+  .sidebarMenu {
+    margin-bottom: 10px;
+  }
+  
+  .sidebarTitle {
+    font-size: 13px;
+    color: rgb(187, 186, 186);
+  }
+  
+  .sidebarList {
+    list-style: none;
+    padding: 5px;
+  }
+  
+  .sidebarListItem {
+    padding: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+  }
+  
+  .sidebarListItem.active,
+  .sidebarListItem:hover {
+    background-color: rgb(79, 79, 79);
+  }
+  
+  .sidebarIcon{
+      margin-right: 5px;
+      font-size: 20px !important;
+  }
+  .link {
+    color: #FFF;
+  }
+  .link:hover {
+     color: rgb(249, 249, 249)
+  }
+
+ /* -----------Home ------------*/
+
+  .admincontainer{
+    display: flex;
+    margin-top: 10px;
+  }
+  .home{
+    flex: 4;
+}
+
+.homeWidgets{
+    display: flex;
+    margin: 20px;
+}
+
+
+.card-body {
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    width: 85rem;
+    
+}
