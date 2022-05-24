@@ -10,7 +10,7 @@ function NavBar() {
 
         {/* <img className="logo" src={logo}
               alt="Movie Ticket"></img> */}
-              <h1>MovieTicket</h1>
+              <h1>MovieTicket Booking App        .</h1>
               <Link to={"/about"} className="text-light bg-dark"> About </Link>
               <Link to={"/"} className="text-light bg-dark"> Home</Link>
               

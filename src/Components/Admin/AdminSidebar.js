@@ -60,10 +60,12 @@ function AdminSidebar() {
           <h3 className="sidebarTitle">Notifications</h3>
           <ul className="sidebarList">
 
-            <li className="sidebarListItem">
-              <DynamicFeed className="sidebarIcon" />
-              Feedback
-            </li>
+          <Link to="/" className="link">
+              <li className="sidebarListItem">
+                <Storefront className="sidebarIcon" />
+                Logout
+              </li>
+              </Link>
 
           </ul>
         </div>

@@ -2,7 +2,9 @@ import React from 'react'
 import AdminHeader from './AdminHeader'
 import { Link } from 'react-router-dom'
 import AdminSidebar from './AdminSidebar'
-import Home from './pages/Home'
+import AHome from './pages/AHome'
+import {BrowserRouter,Routes, Route} from 'react-router-dom';
+import UserList from './pages/UserList'
 
 function AdminHome() {
   return (
@@ -10,7 +12,9 @@ function AdminHome() {
       <AdminHeader/>
       <div className='admincontainer'>
       <AdminSidebar/>
-      <Home/>
+      <AHome/>
+
+      
       </div>
     </div>
   )
