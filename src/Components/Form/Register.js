@@ -5,13 +5,18 @@ import { Link } from 'react-router-dom'
 import Axios from 'axios'
 function Register() {
     
-    const [fullname,setfullname] = useState('')
-    const [address,setaddress] = useState('')
-    const [mobile,setmobile] = useState('')
-    const [email,setemail] = useState('')
-    const [password,setpassword] = useState('')
+    const [fullname,setfullname] = useState(" ");
+    const [address,setaddress] = useState(" ");
+    const [mobile,setmobile] = useState(" ");
+    const [email,setemail] = useState(" ");
+    const [password,setpassword] = useState(" ");
 
     const register=()=>{
+      if(fullname == " " || address ==" " || mobile== " " || email == " " || password == " ")
+      {
+          window.alert("Please enter all the fields!!");
+      }
+      else{
         Axios.post('http://localhost:3001/register',{
             fullname : fullname,
             address  : address,
@@ -20,9 +25,10 @@ function Register() {
             password  : password
         }).then((response)=>{
             console.log(response);
-            window.alert("User registered!")
+            window.alert("User registered!");
           
         })
+    }
     };
 
 
@@ -30,7 +36,7 @@ function Register() {
     <div>
         <NavBar/>
         <br></br><br></br><br></br>
-        <div className='form'>
+        <form className='form'>
                 <h3 align="center" className='title'>Register</h3>
 
                 <div className="form-group">
@@ -67,7 +73,7 @@ function Register() {
                 <p className="forgot-password text-right">
                     Already registered <Link to={"/login"}>Login here</Link>
                 </p>
-            </div>
+            </form>
     </div>
   )
 }

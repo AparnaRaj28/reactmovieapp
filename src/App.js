@@ -14,6 +14,8 @@ import UserList from './Components/Admin/pages/UserList';
 import AdminViewUser from './Components/Admin/AdminViewUser';
 import AdminMovie from './Components/Admin/AdminMovie';
 import AddMovie from './Components/Admin/AddMovie';
+import { Update } from '@material-ui/icons';
+import UpdateMovie from './Components/Admin/UpdateMovie';
 function App() {
   return (
     <div className="App">
@@ -29,6 +31,7 @@ function App() {
             <Route path='/movies' element={<AdminMovie/>}/>
             {/* <Route path='/addmovie' element={<AdminMovie/>}/> */}
            <Route path='/addmovie' element={<AddMovie/>}/> 
+           <Route path="/update/:id" element={<UpdateMovie/>}/>
            
           </Routes>
       </BrowserRouter>

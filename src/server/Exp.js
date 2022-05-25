@@ -32,6 +32,7 @@ app.get('/movies',(req,res)=>{
     client.end;
 })
 
+
 //inserting customer details
 app.post('/register',(req,res)=>{
     
@@ -113,6 +114,38 @@ app.post('/addmovie',(req,res)=>{
 });
 
 
+app.get('/movies/:id',(req,res)=>
+  {
+    client.query(`select * from movie1 where movie_id = ${req.params.id}`,
+    (err,result)=>{
+        if(!err){
+           res.send(result.rows)
+          // console.log(result.rows)
+        }
+        else{
+            console.log(err)
+        }
+    });
+    client.end;
+})
+
+
+app.get('/deletemovie/:id',(req,res)=>
+  {
+    client.query(`delete from movie1 where movie_id = ${req.params.id}`,
+    (err,result)=>{
+        if(!err){
+           res.send(result.rows)
+          // console.log(result.rows)
+        }
+        else{
+            console.log(err)
+        }
+    });
+    client.end;
+})
+
+
 // app.put('/update/:id',(req,res)=>{
 //     let movie = req.body;
 //     let updateQuery=`update movie1 set 
@@ -133,7 +166,7 @@ app.post('/addmovie',(req,res)=>{
 //     client.end;
 // })
 
-//updating movie
+// // updating movie
 // app.put('/update/:id',(req,res)=>{
 //     const {id} =req.params;
 //     const {moviename,description,language,genre,hours} = req.body;
@@ -146,18 +179,44 @@ app.post('/addmovie',(req,res)=>{
 //     });
 // });
 
-//delete movie
-app.delete('/deletemovie/:id',(req,res)=>{
-    const {id} = req.params;
-    console.log(id);
-    client.query(`DELETE FROM movie1 WHERE movie_id = ${id}`,(err,result)=>{
-        if(err){
-            console.log(err)
+// app.put('/update',(req,res)=>{
+//     const movie_id = req.body.movie_id
+//     const movie_name=req.body.movie_name
+//     client.query("UPDATE movie1 set movie_name = ? where movie_id =?",[movie_name,movie_id],
+//     (err,result)=>{
+//         if(err){
+//             console.log(err)
+//         }
+//         else{
+//             res.send(result)
+//         }
+//     });
+// });
+
+
+
+app.put('/update/:id',(req,res)=>{
+    // const {id} =req.params;
+    // console.log("id is",id);
+    let movie = req.body;
+    // const moviename = req.body.movie_name;
+    let updateQuery=`update movie1 set 
+                     movie_name = '${movie.movie_name}',
+                     description = '${movie.description}',
+                     language =  '${movie.language}',
+                     movie_genre =  '${movie.movie_genre}',
+                     movie_hours =  '${movie.movie_hours}'
+                      where movie_id = ${movie.movie_id}`
+
+    client.query(updateQuery,(err,result)=>{
+        if(!err){
+            res.send('Row updated successfully');
         }
         else{
-            res.send(result);
+            console.log(err);
         }
-    })
+    });
+    client.end;
 })
 
 app.listen(3001,()=>{

@@ -6,10 +6,16 @@ import Axios from 'axios'
 import  { useNavigate  } from 'react-router-dom'
 
 function Login() {
+  const [username,setusername] = useState('')
+  const [password,setpassword] = useState('')
    
    const navigate = useNavigate();
 
   const login=()=>{
+    if(username == " " || password == " "){
+      window.alert("Please enter all the fields!")
+    }
+    else{
     Axios.post('http://localhost:3001/login',{
         username : username,
         password : password,
@@ -17,6 +23,7 @@ function Login() {
         console.log(response);
         
     })
+  }
 
      if(username == "admin" && password == "admin"){
        navigate("/adminhome")
@@ -24,14 +31,13 @@ function Login() {
      }
 };
 
-  const [username,setusername] = useState('')
-  const [password,setpassword] = useState('')
+
 
   return (
     <div>
      <NavBar/>
      <br></br><br></br><br></br>
-        <div className='form'>
+        <form className='form'>
                 <h3 align="center" className='title'>Login</h3>
                 <br></br><br></br><br></br><br></br>
                 <div className="form-group">
@@ -52,7 +58,7 @@ function Login() {
                 <p className="forgot-password text-right">
                     Not Registered?  <Link to={"/register"}>Register here</Link>
                 </p>
-            </div> 
+            </form> 
     </div>
 
   )
